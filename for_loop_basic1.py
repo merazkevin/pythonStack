@@ -11,8 +11,12 @@ for i in range(1,101):
 else:
     print(i)
 # Whoa. That Sucker's Huge - Add odd integers from 0 to 500,000, and print the final sum.
+SumOfAll = 0
+for i in range(0,5000001):
+    if (i%2==1):
+        SumOfAll = SumOfAll + i 
+print(SumOfAll)
 
- 
     
 # Countdown by Fours - Print positive numbers starting at 2018, counting down by fours.
 for i in range(2018, 0, -4):

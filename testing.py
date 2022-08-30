@@ -25,6 +25,11 @@
 #     print("Five is greater than two!")
 # else: 
 #     print("five is not greater than two!")
-fruits = ["apple", "banana", "cherry"]
-x, z, y = fruits
-print(y)
+# fruits = ["apple", "banana", "cherry"]
+# x, z, y = fruits
+# print(y)
+SumOfAll = 0
+for i in range(0,5000001):
+    if (i%2==1):
+        SumOfAll = SumOfAll + i 
+print(SumOfAll)
