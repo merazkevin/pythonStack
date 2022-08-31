@@ -28,8 +28,26 @@
 # fruits = ["apple", "banana", "cherry"]
 # x, z, y = fruits
 # print(y)
-SumOfAll = 0
-for i in range(0,5000001):
-    if (i%2==1):
-        SumOfAll = SumOfAll + i 
-print(SumOfAll)
+# SumOfAll = 0
+# for i in range(0,5000001):
+#     if (i%2==1):
+#         SumOfAll = SumOfAll + i 
+# print(SumOfAll)
+# person2 = {
+#     "firts_name": "Ognjen", 
+#     "last_name": "Topic", 
+#     "age":28, 
+#     "is_tittle_holder":True
+#     }
+# print(person2["firts_name"])
+# print(person2["is_tittle_holder"])
+
+
+
+countries_so_far = {"Mexico": 1, "Morocco": 1}
+new_visits = ["Albania", "Mexico", "Togo", "Morocco"]
+
+
+countries_so_far["Albania"] = 1
+countries_so_far["Mexico"] += 1
+print(new_visits)
