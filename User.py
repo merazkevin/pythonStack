@@ -30,15 +30,21 @@ dress_shoe.type = "Ballet Flats"
 #<---- Methods--->
 
 class User:		# here's what we have so far
-    def __init__(self, name, email):
+    def __init__(self, name, email, age):
         self.name = name
         self.email = email
+        self.age = age
+        self.rewardsMember = True
+        self.gold_card_points = 0
+
     # adding the greeting method
     def greeting(self):
-	    print(f"Hello, my name is {self.name}")
+	    print(f"Hello, my name is {self.name} im {self.age} years old.")
 
-Kevin = User("kevin", "merazkevin@yahoo.com")
-cool_person = User("Mark", "Mark@thisEmailfake.com")
+
+
+Kevin = User("kevin", "merazkevin@yahoo.com", "29")
+cool_person = User("Mark", "Mark@thisEmailfake.com", "25")
 
 Kevin.greeting()
-cool_person.greeting()
+# cool_person.greeting()
