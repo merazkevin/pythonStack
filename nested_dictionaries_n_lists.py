@@ -1,3 +1,6 @@
+from unicodedata import name
+
+
 x = [
     [5,2,3],
     [10,8,9]
@@ -31,7 +34,10 @@ z[0]['y']="30"
 
 #<--- 2 --->
 # Iterate Through a List of Dictionaries
-# Create a function iterateDictionary(some_list) that, given a list of dictionaries, the function loops through each dictionary in the list and prints each key and the associated value.
+# Create a function iterateDictionary(some_list)
+#  that, given a list of dictionaries, the function 
+# loops through each dictionary in the list and 
+# prints each key and the associated value.
 
 students = [
         {'first_name':  'Michael', 'last_name' : 'Jordan'},
@@ -40,7 +46,19 @@ students = [
         {'first_name' : 'KB', 'last_name' : 'Tonel'}
     ]
 
-for item in students.items():
-    print(item)
+# def iterateDictionary(some_list):
+#     for item in some_list:
+#         for key in item:
+#             print(f'{key} {item[key]}')
+# iterateDictionary(students)
 
 #<--- 3 --->
+# Create a function iterateDictionary2(key_name, some_list)
+#  that, given a list of dictionaries and a key name, the 
+# function prints the value stored in that key for each dictionary.
+#  For example, iterateDictionary2('first_name', students) should output:
+def iterateDictionary2(key_name, some_list):
+    for item in some_list:
+        for key in item:
+            print(f'{key} {item[key]}')
+iterateDictionary2('first_name', students)

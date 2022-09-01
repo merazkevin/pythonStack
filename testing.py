@@ -44,10 +44,21 @@
 
 
 
-countries_so_far = {"Mexico": 1, "Morocco": 1}
-new_visits = ["Albania", "Mexico", "Togo", "Morocco"]
+# countries_so_far = {"Mexico": 1, "Morocco": 1}
+# new_visits = ["Albania", "Mexico", "Togo", "Morocco"]
 
 
-countries_so_far["Albania"] = 1
-countries_so_far["Mexico"] += 1
-print(new_visits)
+# countries_so_far["Albania"] = 1
+# countries_so_far["Mexico"] += 1
+# # print(new_visits)
+# favorite_color = input('What is your favorite color? ') # input takes a prompt, which needs to be a string
+# print(f'Your favorite color is: {favorite_color}') #output, prints the color given to the console
+
+
+
+class User:
+    pass   
+
+michael = User()
+anna = User()
+print(User.items)
