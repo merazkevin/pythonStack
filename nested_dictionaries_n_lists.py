@@ -46,10 +46,10 @@ students = [
         {'first_name' : 'KB', 'last_name' : 'Tonel'}
     ]
 
-# def iterateDictionary(some_list):
-#     for item in some_list:
-#         for key in item:
-#             print(f'{key} {item[key]}')
+def iterateDictionary(some_list):
+    for item in some_list:
+        for key in item:
+            print(f'{key} {item[key]}')
 # iterateDictionary(students)
 
 #<--- 3 --->
@@ -57,8 +57,34 @@ students = [
 #  that, given a list of dictionaries and a key name, the 
 # function prints the value stored in that key for each dictionary.
 #  For example, iterateDictionary2('first_name', students) should output:
+
+
 def iterateDictionary2(key_name, some_list):
     for item in range(0,len(some_list)):
         print(f' {some_list[item][key_name]}')
-iterateDictionary2('first_name', students)
-iterateDictionary2('last_name', students)
+# iterateDictionary2('first_name', students)
+# iterateDictionary2('last_name', students)
+
+#<--- 3 --->
+# Iterate Through a Dictionary with List Values
+# Create a function printInfo(some_dict) that given 
+# a dictionary whose values are all lists, prints the
+# name of each key along with the size of its list, 
+# and then prints the associated values within each 
+# key's list. For example:
+
+dojo = {
+    'locations': ['San Jose', 'Seattle', 'Dallas', 'Chicago', 'Tulsa', 'DC', 'Burbank'],
+    'instructors': ['Michael', 'Amy', 'Eduardo', 'Josh', 'Graham', 'Patrick', 'Minh', 'Devon']
+}
+
+combatFitness = {
+    'fighter':['Charles', 'Jill', 'Luis' 'Adam', 'Kevin'],
+    'classes':[ 'MuayThai', 'boxing', 'krav_magga', 'bjj']
+}
+def printInfo(some_dict):
+    for i in some_dict:
+        print(i, ".",some_dict[i])
+printInfo(dojo)
+printInfo(combatFitness)
+
