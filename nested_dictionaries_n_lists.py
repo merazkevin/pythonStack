@@ -58,7 +58,7 @@ students = [
 # function prints the value stored in that key for each dictionary.
 #  For example, iterateDictionary2('first_name', students) should output:
 def iterateDictionary2(key_name, some_list):
-    for item in some_list:
-        for key in item:
-            print(f'{key} {item[key]}')
+    for item in range(0,len(some_list)):
+        print(f' {some_list[item][key_name]}')
 iterateDictionary2('first_name', students)
+iterateDictionary2('last_name', students)
