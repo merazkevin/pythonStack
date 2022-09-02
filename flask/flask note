@@ -9,7 +9,7 @@
     step 2 :in cmder, run: python -m pipenv install flask   
     this creates our virtual environment in the folder, and also installs flask
     
-    step 3: in cmder, run: pipenv shell
+    step 3: in cmder, run: python -m pipenv shell
     this makes our cmder enter the virtual environment
     
     step 4: in cmder, run: python server.py
