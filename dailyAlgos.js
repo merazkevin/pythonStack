@@ -1,25 +1,65 @@
-// Given in an alumni interview in 2021.
-// String Encode
-// You are given a string that may contain sequences of consecutive characters.
-// Create a function to shorten a string by including the character,
-// then the number of times it appears. 
+// String: Is Palindrome
+// Create a function that returns a boolean whether the string is a strict palindrome. 
+//   - palindrome = string that is same forwards and backwards
 
-// If final result is not shorter (such as "bb" => "b2" ),
-// return the original string.
+// Do not ignore spaces, punctuation or capitalization
 // */
+// // RIOT Read Input Output Talk
+// const str1 = "a x a";
+// const expected1 = true;
 
-const str1 = "aaaabbcddd";
-const expected1 = "a4bbcd3";
-const expected1b = "a4b2cd3";
+// const str2 = "racecar";
+// const expected2 = true;
 
-const str2 = "";
-const expected2 = "";
+// const str3 = "Dud";
+// const expected3 = false;
 
-const str3 = "a";
-const expected3 = "a";
+// const str4 = "oho!";
+// const expected4 = false;
 
-const str4 = "bbcc";
-const expected4 = "bbcc";
+// const str5 = "abba"
+// const expected5 = true;
 
-const str5 = "abbbbbbbbbbbbbbbbb"
-const expected5 = "ab17"
+
+// function isPalindrome(str) {}
+//   String: Is Palindrome
+//   Create a function that returns a boolean whether the string is a strict palindrome. 
+//     - palindrome = string that is same forwards and backwards
+  
+//   Do not ignore spaces, punctuation or capitalization
+// */
+// // RIOT Read Input Output Talk
+const str1 = "a x a";
+const expected1 = true;
+
+const str2 = "racecar";
+const expected2 = true;
+
+const str3 = "Dud";
+const expected3 = false;
+
+const str4 = "oho!";
+const expected4 = false;
+
+const str5 = "abba"
+const expected5 = true;
+
+
+function isPalindrome(str) {
+    for(let i = 0;i<Math.floor((str.length/2); i++){
+        let leftLetter = str[i]
+        let rightLetter =str[str.length-1-i]
+    if leftLetter!=rightLetter
+}
+
+console.log(isPalindrome(str1)) //expected: true
+// console.log(isPalindrome(str2)) //expected: true
+// console.log(isPalindrome(str3)) //expected: false
+// console.log(isPalindrome(str4)) //expected: false
+// console.log(isPalindrome(str5)) //expected: true
+
+// console.log(isPalindrome(str1)) //expected: true
+// console.log(isPalindrome(str2)) //expected: true
+// console.log(isPalindrome(str3)) //expected: false
+// console.log(isPalindrome(str4)) //expected: false
+// console.log(isPalindrome(str5)) //expected: true

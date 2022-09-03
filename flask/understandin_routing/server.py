@@ -21,9 +21,9 @@ def hi_John(name):
 def repeat(word, number):
     return word * number
 
-@app.route('/unknown')
-def unknown();
-    if 
+# @app.route('/unknown')
+# def unknown();
+#     if 
 
 
 if __name__=="__main__":
