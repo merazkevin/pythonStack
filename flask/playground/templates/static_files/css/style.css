@@ -1,0 +1,33 @@
+.body{
+    justify-content: space-between;
+    display: flex;
+    width: 100%vf;   
+    height: 100%vh;  
+    margin: 10px;
+    padding: 5px;
+}
+
+.welcome{
+    text-align: center;
+}
+.Container{
+    width: 1206px;   
+    height: 1206px; 
+}
+.divContainer{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    padding: 5px;
+    flex-wrap: wrap;
+}
+
+.box{
+    display: inline-block;
+    margin: 10px;
+    border-radius: 8px;
+    background-color:  {{color}};
+    box-shadow: black 3px 3px 3px;
+    width: 200px;
+    height: 200px;
+}
