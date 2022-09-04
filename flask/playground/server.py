@@ -4,13 +4,10 @@ app = Flask(__name__)
 def header():
     return render_template('index.html')
 
-@app.route('/play/<int:number>')
-def playground(number):
-    return render_template('play.html', number=number)
+@app.route('/play/<int:number>/<color>')
+def playground(number, color):
+    return render_template('play.html', number=number, color=color)
     
-
-
-
 
 
 if __name__=="__main__":

@@ -14,6 +14,7 @@
             margin: 10px;
             padding: 5px;
         }
+
         .welcome{
             text-align: center;
         }
@@ -30,9 +31,10 @@
         }
         
         .box{
+            display: inline-block;
             margin: 10px;
             border-radius: 8px;
-            background-color: lightblue;
+            background-color:  {{color}};
             box-shadow: black 3px 3px 3px;
             width: 200px;
             height: 200px;
@@ -43,11 +45,8 @@
     <h1 class="welcome">You are now in the Playground</h1>
     <div class="Container">
         <div class="divContainer">
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
             {% for i in range(0,number) %}
-                    <div class="box"></div>
+            <div class="box"></div>
                 {% endfor %}
     </div>
     
