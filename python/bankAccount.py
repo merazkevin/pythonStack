@@ -1,9 +1,16 @@
 class BankAccount:
+    population=0
+
     def __init__(self, int_rate, balance):
         self.int_rate = int_rate
         self.balance = balance 
         print(f'Welcome your acccount Balance is *${balance}*')
         print(f'Welcome your acccount interest rate is *%{int_rate}*')
+        BankAccount.population+=1
+
+    @classmethod
+    def BankAccount_total(cls):
+        print(f'Total acounts {cls.population}')
 
     def deposit(self, amount):
         self.balance= self.balance + amount
@@ -33,4 +40,4 @@ class BankAccount:
 kevin=BankAccount(.1,0).deposit(100).deposit(25).deposit(7.82).yield_interest().display_account_info()
 meraz=BankAccount(.1,0).deposit(180).deposit(1001).withdraw(233).withdraw(93).withdraw(3).yield_interest().display_account_info()
 
-
+BankAccount.BankAccount_total()
