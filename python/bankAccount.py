@@ -1,11 +1,9 @@
 class BankAccount:
-    # don't forget to add some default values for these parameters!
     def __init__(self, int_rate, balance):
         self.int_rate = int_rate
         self.balance = balance 
         print(f'Welcome your acccount Balance is *${balance}*')
         print(f'Welcome your acccount interest rate is *%{int_rate}*')
-        # don't worry about user info here; we'll involve the User class soon
 
     def deposit(self, amount):
         self.balance= self.balance + amount
