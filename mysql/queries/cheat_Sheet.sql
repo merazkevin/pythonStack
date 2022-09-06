@@ -1,6 +1,7 @@
---INSERT
+
+ --INSERT
 --UPDATE
 --DELETE
---SELECT 
+--SELECT;
 
 INSERT INTO names(names)  VALUES ('Bonny'), ('Rob'), ('John');
