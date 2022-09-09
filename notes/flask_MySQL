@@ -1,29 +1,87 @@
-"""
-    step 1: connection to the db - mysql
-    the instance of the MySQLConnection class
+# """
+#     step 1: connection to the db - mysql
+#     the instance of the MySQLConnection class
     
-    step 2: query string - 'INSERT INTO...'
-    the string that will eventually be executed on our mySQL server
+#     step 2: query string - 'INSERT INTO...'
+#     the string that will eventually be executed on our mySQL server
     
-    step 3: data dictionary
-    the values that will be interpolated into the query string
+#     step 3: data dictionary
+#     the values that will be interpolated into the query string
     
-    step 4: data dictionary keys - first_name, last_name, email
-    the keys of the data dictionary used in the query string with %-interpolation (%(key_name)s)
-"""
-#Example code
+#     step 4: data dictionary keys - first_name, last_name, email
+#     the keys of the data dictionary used in the query string with %-interpolation (%(key_name)s)
+# """
+##Example code
 
-#step 2
-query = "INSERT INTO friends (first_name, last_name, email) VALUES (%(first_name)s, %(last_name)s, %(email)s );"
+# #step 2
+# query = "INSERT INTO friends (first_name, last_name, email) VALUES (%(first_name)s, %(last_name)s, %(email)s );"
 
-#step 3
-data = {
-    #step 4
-    "first_name" : "Adrien",
-    "last_name" : 'Dion',
-    'email' : 'adion@codingdojo.com'
-}
-#under no circumstance are we to use f strings or bypass making a dictionary. EVER! This leaves the database open to simple "SQL Injections" ie joe@gmail.com' or '1'='1  since 1=1 is always true this malicous user just fetched our entire query.
+# #step 3
+# data = {
+#     #step 4
+#     "first_name" : "Adrien",
+#     "last_name" : 'Dion',
+#     'email' : 'adion@codingdojo.com'
+# }
+# #under no circumstance are we to use f strings or bypass making a dictionary. EVER! This leaves the database open to simple "SQL Injections" ie joe@gmail.com' or '1'='1  since 1=1 is always true this malicous user just fetched our entire query.
 
-#step 1
-mysql.query_db(query, data)
+# #step 1
+# mysql.query_db(query, data)
+
+
+
+# how to install flask with PyMySQL
+# in cmder- python -m pipenv install flask PyMySQL
+
+
+
+#template for PyMySQL
+#"""
+# a cursor is the object we use to interact with the database
+import pymysql.cursors
+# change the user and password as needed
+class MySQLConnection:
+    def __init__(self, db):
+        connection = pymysql.connect(host = 'localhost',
+                                    user = 'root', # change the user and password as needed
+                                    password = 'root', 
+                                    db = db,
+                                    charset = 'utf8mb4',
+                                    cursorclass = pymysql.cursors.DictCursor,
+                                    autocommit = True)
+        self.connection = connection
+    def query_db(self, query, data=None):
+        with self.connection.cursor() as cursor:
+            try:
+                query = cursor.mogrify(query, data)
+                print("Running Query:", query)
+
+                executable = cursor.execute(query, data)
+                if query.lower().find("insert") >= 0:
+                    # if the query is an insert, return the id of the last row, since that is the row we just added
+                    self.connection.commit()
+                    return cursor.lastrowid
+                elif query.lower().find("select") >= 0:
+                    # if the query is a select, return everything that is fetched from the database
+                    # the result will be a list of dictionaries
+                    result = cursor.fetchall()
+                    return result
+                else:
+                    # if the query is not an insert or a select, such as an update or delete, commit the changes
+                    # return nothing
+                    self.connection.commit()
+            except Exception as e:
+                # in case the query fails
+                print("Something went wrong", e)
+                return False
+            finally:
+                # close the connection
+                self.connection.close() 
+# this connectToMySQL function creates an instance of MySQLConnection, which will be used by server.py
+# connectToMySQL receives the database we're using and uses it to create an instance of MySQLConnection
+def connectToMySQL(db):
+    return MySQLConnection(db)
+
+
+
+#"""

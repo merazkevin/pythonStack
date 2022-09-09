@@ -9,15 +9,14 @@ def index():
     print(friends)
     return render_template("index.html", friends=friends)
 
-from friend import Friend
 @app.route('/create_friend', methods=["POST"])
 def create_friend():
     # First we make a data dictionary from our request.form coming from our template.
     # The keys in data need to line up exactly with the variables in our query string.
     data = {
-        "fname": request.form["fname"],
-        "lname" : request.form["lname"],
-        "occ" : request.form["occ"]
+        "first_name": request.form["first_name"],
+        "last_name" : request.form["last_name"],
+        "occupation" : request.form["occupation"]
     }
     # We pass the data dictionary into the save method from the Friend class.
     Friend.save(data)

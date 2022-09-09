@@ -1,0 +1,16 @@
+A class is a code template for creating objects. Objects have member variables and have behaviour associated with them. In python a class is created by the keyword class . An object is created using the constructor of the class. This object will then be called the instance of the class.
+like a blue print.
+*************
+a class consist of the following:
+        1. Instantiation-The process of creating an instance is known as instantiation
+        2. Attributes-A class attribute is a Python variable that belongs to a class rather than a particular object.
+        3. class Methods-  Class methods are methods that are called on the class itself, not on a specific object instance. Therefore, it belongs to a class level, and all class instances share a class method
+        definition-a particular form of procedure for accomplishing or approaching something, especially a systematic or established one.
+
+-instance atributes-
+An instance attribute is a Python variable belonging to one, and only one, object. usually represented by a "self" kinda like how we human say "I". 
+what is self?
+ Self is a perimeter on which a method passes information about the individual object(instance) that has called the method.  
+-Methods A *function* stored in an instance or class is called a method
+how to call a method?
+you need to call the method in your code.

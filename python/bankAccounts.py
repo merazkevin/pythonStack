@@ -1,3 +1,6 @@
+from typing_extensions import Self
+
+
 class BankAccount:
     population=0
 
@@ -8,7 +11,7 @@ class BankAccount:
         print(f'Welcome your acccount interest rate is *%{int_rate}*')
         BankAccount.population+=1
 
-    @classmethod
+    # @classmethod
     def BankAccount_total(cls):
         print(f'Total acounts {cls.population}')
 
@@ -25,7 +28,7 @@ class BankAccount:
         return self
 
     def display_account_info(self):
-        print(f'Your new balance is ***{self.balance}***')
+        print(f'Your new balance is ***{self.account}***')
         return self
 
     def yield_interest(self):
@@ -36,8 +39,28 @@ class BankAccount:
         return self
 
 
+class User:
+    def __init__(self, name, email):
+        self.name = name
+        self.email = email
+        self.account = BankAccount(int_rate=0.02, balance=0)
+    # other methods
+    
+    def make_deposit(self, amount):
+        self.account.deposit(amount)
+        print(self.account)
+        return self
 
-kevin=BankAccount(.1,0).deposit(100).deposit(25).deposit(7.82).yield_interest().display_account_info()
+    def make_withdraw(self, amount):
+        self.account.balance+=amount
+        return self
+
+    def display_user_balance(self, balance):
+        print(self.account.balance)
+        return self
+
+kevin=User('kevin', 'jfhdks@hfsdj.com')
+kevin.make_deposit(100)
 meraz=BankAccount(.1,0).deposit(180).deposit(1001).withdraw(233).withdraw(93).withdraw(3).yield_interest().display_account_info()
 
-BankAccount.BankAccount_total()
+# BankAccount.BankAccount_total()
