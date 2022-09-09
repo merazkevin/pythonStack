@@ -34,7 +34,7 @@ class BankAccount:
         return self
 
     def display_account_info(self,):
-        print(f'acount Name {self.name} balance*${self.balance}* interest*{self.int_rate}* ')
+        print(f'acount Name {self.name} balance*${self.balance}* interest rate*{self.int_rate}* ')
         
 
     def yield_interest(self):
@@ -46,10 +46,13 @@ class BankAccount:
             print('Unsufficient Funds! U --->BROKE<---')
         return self
 kevin=BankAccount('kevin',0.01,0)
-kevin.deposit(600.0)
-kevin.yield_interest()
-kevin.display_account_info()
-kevin.withdraw(29990)
+kevin1=BankAccount('kevin',0.01,0)
+
+kevin.deposit(600).deposit(600).deposit(600).withdraw(10). yield_interest()
+
+kevin1.deposit(100).deposit(100).withdraw(10).withdraw(10).withdraw(10).withdraw(10).yield_interest()
+
+BankAccount.BankAccount_total()
 
 
 # class User:
