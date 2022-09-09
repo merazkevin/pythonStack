@@ -1,4 +1,4 @@
-from typing_extensions import Self
+
 
 
 class BankAccount:
@@ -28,8 +28,8 @@ class BankAccount:
         return self
 
     def display_account_info(self):
-        print(f'Your new balance is ***{self.account}***')
-        return self
+        print(f'Your new balance is ***{User.self.account}***')
+        
 
     def yield_interest(self):
         self.yield_interest=self.int_rate*self.balance
@@ -61,6 +61,6 @@ class User:
 
 kevin=User('kevin', 'jfhdks@hfsdj.com')
 kevin.make_deposit(100)
-meraz=BankAccount(.1,0).deposit(180).deposit(1001).withdraw(233).withdraw(93).withdraw(3).yield_interest().display_account_info()
+meraz=BankAccount(.02,0).deposit(180).deposit(1001).withdraw(233).withdraw(93).withdraw(3).yield_interest().display_account_info()
 
 # BankAccount.BankAccount_total()

@@ -46,10 +46,12 @@ const expected5 = true;
 
 
 function isPalindrome(str) {
-    for(let i = 0;i<Math.floor((str.length/2); i++){
+    for(let i = 0;i<Math.floor(str.length/2); i++){
         let leftLetter = str[i]
         let rightLetter =str[str.length-1-i]
-    if leftLetter!=rightLetter
+    if (leftLetter !=rightLetter){
+
+    }
 }
 
 console.log(isPalindrome(str1)) //expected: true
