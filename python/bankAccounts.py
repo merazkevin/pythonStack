@@ -8,8 +8,6 @@ class BankAccount:
         self.int_rate = int_rate
         self.balance = balance 
         self.name= name
-        print(f'Welcome your acccount Balance is *${balance}*')
-        print(f'Welcome your acccount interest rate is *%{int_rate}*')
         BankAccount.population+=1
 
     @classmethod
@@ -45,33 +43,35 @@ class BankAccount:
         else:
             print('Unsufficient Funds! U --->BROKE<---')
         return self
-kevin=BankAccount('kevin',0.01,0)
-kevin1=BankAccount('kevin',0.01,0)
 
+kevin=BankAccount('kevin',0.01,0)
 kevin.deposit(600).deposit(600).deposit(600).withdraw(10). yield_interest()
 
+kevin1=BankAccount('kevin',0.01,0)
 kevin1.deposit(100).deposit(100).withdraw(10).withdraw(10).withdraw(10).withdraw(10).yield_interest()
-
 BankAccount.BankAccount_total()
 
+class User:
+    def __init__(self, name, email):
+        self.name = name
+        self.email = email
+        self.account = BankAccount(name,0.02, 0),
+    # other methods
+    def make_deposit(self, amount):
+        self.account.balance += amount
+        print(f'You deposited *${amount}*')
+        print(f'Your new balance is *{self.account.balance}*')
+    def make_withdrawal(self, amount):
+        self.account.balance-=amount
+        print(f'You withdrawal *${amount}*')
+        print(f'Your new balance is *{self.account.balance}*')
+    def display_user_balance(self,):
+        print(self.account.balance)
 
-# class User:
-#     def __init__(self, name, email):
-#         self.name = name
-#         self.email = email
-#         self.account = BankAccount(int_rate=0.02, balance=0)
-#     # other methods
-    
-#     def make_deposit(self, amount):
-#         self.account.deposit(amount)
-#         print(self.account)
-#         return self
 
-#     def make_withdraw(self, amount):
-#         self.account.balance+=amount
-#         return self
 
-#     def display_user_balance(self, balance):
-#         print(self.account.balance)
-#         return self
-
+wells=User('acccount','jdhasdff@gsdsa.com')
+print(wells.name)
+print(kevin.balance)
+wells.make_withdrawal(150)
+wells.display_user_balance()
