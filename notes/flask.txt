@@ -1,0 +1,34 @@
+What is Flask?
+    last is a micro-framework for building Web application.
+why i should use flask?
+    easyto set up
+    easy to use libraries for all our server needs
+what does flask do?
+    it listens to HTTP Request?responses
+    it can handle routing in our server.
+    serves up HTML,CSS, Javascript
+    passes data from server to templates
+    packages data from forms
+    serves JSON
+    Handles SESSION Cookies.
+Flask is broken into two main parts 
+TEmplates(HTML)+Statics(css,js) and server.py
+
+flask data flow Diagram
+
+                                ______________________________________________
+                               |                                              |
+[----------]                   |    |-------------------------->[----------]  |
+[  client  ]-----------------> |  Flask         [-----------]   [--server--]  |
+[-- Data --]                   |   Data         [ Templates-]   [-- .py----]  |
+[----------]                   |                [ +Static   ]   [          ]  |
+      |___________________________________________|  ^                 |      |
+                               [                     |_________________|      | 
+                               [______________________________________________|
+
+flask Flow:
+    The HTTP request is made and hits the server.py file.
+    Based on the route we give, it gathers up any HTML, CSS, JS, and data.
+    Then it responds back to the browser with what we return.
+    Eventually we will be breaking down the functionality of 
+    the Flask server into separate parts, but for now this is our simple server.
