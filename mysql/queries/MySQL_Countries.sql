@@ -9,7 +9,7 @@ SELECT * FROM world.countrylanguage WHERE world.countrylanguage.Language='sloven
 #Your query should return the name of the country and the total number of cities. 
 #Your query should arrange the result by the number of cities in descending order. (3)
 SELECT * FROM world.countries; 
-select * from world.countries where world.countries.id=1<=239 ORDER BY id DESC;
+select * from world.countries where world.countries.id ORDER BY id DESC;
 
 #3. What query would you run to get all the cities in Mexico with a population of greater
 # than 500,000? Your query should arrange the result by population in descending order. (1)
