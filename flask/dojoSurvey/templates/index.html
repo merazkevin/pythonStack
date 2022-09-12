@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey</title>
+    <style>
+        *{
+    padding: 0px;
+    margin: 0px;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+}
+.div{
+    box-shadow: black 3px 3px 3px;
+    border-radius: 5px;
+    background-color: peachpuff;
+    justify-content: space-around;
+    padding: 5px;
+    gap: 20px;
+}
+.shadow{
+    box-shadow: black 2px  2px 2px;
+}
+    </style>
+</head>
+<body>
+    <div class="div">
+        <form action="/process", method="POST" >
+            <!-- name label -->
+            <label for="name">name</label><br>
+            <input class="shadow" type="text" name="name"placeholder="name"><br>
+            <!-- location label----> 
+            <label for="dojoLocations">choose a Dojo Location</label><br>
+            <select class="shadow" id="locations" name="dojoLocations">
+                <option value="SanJose">San Jose</option>
+                <option value="Berkeley">Berkeley</option>
+                <option value="Chicago">Chicago</option>
+                <option value="PuertoRico">Puerto Rico</option>
+            </select><br>
+            <!-- favorite Language--->
+            <label for="favLanguages"> favorite Language</label><br>
+            <select class="shadow" name="favLanguages">
+                <option value="Python">Python</option>
+                <option value="Javascript">Javascript</option>
+                <option value="C#">C#</option>
+            </select>
+            <br>
+            <label for="commentArea">comment (Optional)</label><br>
+            <textarea class="shadow" name="commentArea" placeholder="comment Area">comment Area</textarea><br>
+            <button class="shadow"name="submitButton">submit</button><br>
+        </form> 
+    </div>    
+</body>
+</html>

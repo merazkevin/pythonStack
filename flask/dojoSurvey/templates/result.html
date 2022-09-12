@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submitted Info</title>
+    <style>
+        *{
+    padding: 0px;
+    margin: 0px;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+}
+.div{
+    box-shadow: black 3px 3px 3px;
+    border-radius: 5px;
+    background-color: peachpuff;
+    justify-content: space-around;
+    padding: 5px;
+    gap: 20px;
+}
+.shadow{
+    box-shadow: black 2px  2px 2px;
+}
+    </style>
+</head>
+<body>
+    <form method="POST">
+        <div class="div">
+            <h1>Submitted Info</h1>
+            <p>Name:{{session['name']}} </p>
+            <p>Dojo Location:{{session['dojoLocations']}} </p>
+            <p>favorite Language:{{session[favLanguages]}}</p>
+            <a href="/">Home</a>
+        </div>
+    </form>
+    
+</body>
+</html>
