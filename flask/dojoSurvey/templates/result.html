@@ -33,9 +33,9 @@ body{
     <form method="POST">
         <div class="div">
             <h1>Submitted Info</h1>
-            <p>Name:{{session['name']}} </p>
-            <p>Dojo Location:{{session['dojoLocations']}} </p>
-            <p>favorite Language:{{session[favLanguages]}}</p>
+            <p>Name:   {{session['name']}} </p>
+            <p>Location:   {{session['value']}} </p>
+            <p>{{session['commentArea']}}</p>
             <a href="/">Home</a>
         </div>
     </form>

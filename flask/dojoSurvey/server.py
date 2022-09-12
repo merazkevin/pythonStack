@@ -8,8 +8,12 @@ app.secret_key='root'
 def index():
     return render_template('index.html',)
 
-@app.route('/process', methods=['POST'])
+@app.route('/process', methods=['POST'] )
 def processForm():
+    session['name']=request.form['name']
+    session['dojoLocations']=request.form['dojoLocations']
+    session['favLanguages']=request.form['favLanguages']
+    session['commentArea']=request.form['commentArea']
     session['submitButton']=request.form['submitButton']
     return redirect('/result')
 
