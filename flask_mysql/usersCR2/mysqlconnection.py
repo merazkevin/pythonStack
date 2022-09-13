@@ -1,45 +1,4 @@
-# """
-#     step 1: connection to the db - mysql
-#     the instance of the MySQLConnection class
-    
-#     step 2: query string - 'INSERT INTO...'
-#     the string that will eventually be executed on our mySQL server
-    
-#     step 3: data dictionary
-#     the values that will be interpolated into the query string
-    
-#     step 4: data dictionary keys - first_name, last_name, email
-#     the keys of the data dictionary used in the query string with %-interpolation (%(key_name)s)
-# """
-##Example code
-
-# #step 2
-# query = "INSERT INTO friends (first_name, last_name, email) VALUES (%(first_name)s, %(last_name)s, %(email)s );"
-
-# #step 3
-# data = {
-#     #step 4
-#     "first_name" : "Adrien",
-#     "last_name" : 'Dion',
-#     'email' : 'adion@codingdojo.com'
-# }
-# #under no circumstance are we to use f strings or bypass making a dictionary. EVER! This leaves the database open to simple "SQL Injections" ie joe@gmail.com' or '1'='1  since 1=1 is always true this malicous user just fetched our entire query.
-
-# #step 1
-# mysql.query_db(query, data)
-
-
-
-# how to install flask with PyMySQL
-# in cmder- python -m pipenv install flask PyMySQL
-
-
-
-#template for PyMySQL
-#"""
-# a cursor is the object we use to interact with the database
 import pymysql.cursors
-# change the user and password as needed
 class MySQLConnection:
     def __init__(self, db):
         connection = pymysql.connect(host = 'localhost',
@@ -81,7 +40,3 @@ class MySQLConnection:
 # connectToMySQL receives the database we're using and uses it to create an instance of MySQLConnection
 def connectToMySQL(db):
     return MySQLConnection(db)
-
-
-
-#"""

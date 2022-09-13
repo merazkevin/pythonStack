@@ -1,0 +1,17 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    vertical-align: top;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.form{
+    border: black 1px;
+    
+}
+.homeButton{
+    border: black 1px;
+    border-radius: 5px;
+    box-shadow: black 3px 3px 3px;
+}

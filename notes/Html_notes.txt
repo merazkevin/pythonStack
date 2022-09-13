@@ -19,3 +19,4 @@ The HTML <form> element can contain one or more of the following form elements:
   <output>
   <option>
   <optgroup>
+  input type checkbox. print it out with n without check.
