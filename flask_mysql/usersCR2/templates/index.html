@@ -17,13 +17,18 @@
                 <th>Full Name</th>
                 <th>Email</th>
                 <th>Created At</th>
+                <th>actions</th>
             </tr>
             {% for one_user in all_users %}
             <tr>
                 <td>{{ one_user.id }}</td>
-                <td>{{ one_user.first_name }}{{ one_user.last_name }}</td> 
+                <td>{{ one_user.first_name }}, {{ one_user.last_name }}</td> 
                 <td>{{ one_user.email }}</td>
                 <td>{{one_user.createdAt}}</td>
+                <td>
+                    <a href="/delete_user/{{one_user.id}}"> delete </a>
+                    <a href="/edit/{{one_user.id}}"> Edit </a>
+                </td>
             </tr>
             {% endfor %}
         </table>

@@ -35,5 +35,17 @@ def delete_user(id):
     # Don't forget to redirect after saving to the database.
     return redirect('/')
 
+@app.route('/edit/<int:id>')
+def edit(id):
+    data={
+        'id':id
+    }
+    User.edit(data)
+    return redirect('/edit/user')\
+
+@app.route('/edit/user')
+def renderEdit():
+    return render_template('editUser.html')
+
 if __name__ == "__main__":
     app.run(debug=True)

@@ -30,6 +30,10 @@ class User:
         return connectToMySQL('user2').query_db( query, data )
     @classmethod
     def delete(cls, data ):
-        query = "DELETE FROM user2 WHERE id=(%(id)s);"
+        query = "DELETE FROM users WHERE id=(%(id)s);"
         # data is a dictionary that will be passed into the save method from server.py
         return connectToMySQL('user2').query_db( query, data )
+    @classmethod
+    def edit(cls,data):
+        query = "UPDATE users SET ( first_name , last_name , email , created_at, updated_at ) VALUES ( %(first_name)s , %(last_name)s , %(email)s , NOW() , NOW() ) WHERE id=(%(id)s); "
+        return connectToMySQL('user2').query_db(query, data)
