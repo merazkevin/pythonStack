@@ -8,44 +8,62 @@ def index():
     print(all_users)
     return render_template("index.html", all_users=all_users)
 
-@app.route('/newUser')
+@app.route('/user/new/form')
 def newUser():
     return render_template("newUser.html")
 
-@app.route('/create_user', methods=["POST"])
+@app.route('/user/create', methods=["POST"])
 def create_user():
     data = {
         "first_name": request.form["first_name"],
         "last_name" : request.form["last_name"],
         "email" : request.form["email"]
     }
-    User.save(data)
+    User.create(data)
     return redirect('/')
 
 @app.route('/delete_user/<int:id>')
 def delete_user(id):
-    # print("*******deleteRoute*******",request.form)
-    # First we make a data dictionary from our request.form coming from our template.
-    # The keys in data need to line up exactly with the variables in our query string.
     data = {
-        'id':id
+    'id':id
     }
-    # We pass the data dictionary into the save method from the Friend class.
     User.delete(data)
-    # Don't forget to redirect after saving to the database.
     return redirect('/')
 
+
+
+# this route takes us to edit one user---->
 @app.route('/edit/<int:id>')
-def edit(id):
+def update(id):
     data={
         'id':id
+        
     }
-    User.edit(data)
-    return redirect('/edit/user')\
+    one_user= User.get_one_by_id(data)
+    return render_template('editUser.html', one_user=one_user)
 
-@app.route('/edit/user')
-def renderEdit():
-    return render_template('editUser.html')
+@app.route('/edit/<int:id>/update', methods=['POST'])
+def processing_update(id):
+    data={
+        "id":id,
+        "first_name":request.form["first_name"],
+        "last_name" : request.form["last_name"],
+        "email": request.form["email"],
+    }
+    User.update(data)
+    return redirect('/')
+
+@app.route('/show/user/<int:id>')
+def user_show_page(id):
+    data={
+        'id':id
+        
+    }
+    one_user= User.get_one_by_id(data)
+    return render_template('showUser.html', one_user=one_user)
+
+# @app.route('/show/user/<int:id>/users')
+# def user_show
 
 if __name__ == "__main__":
     app.run(debug=True)

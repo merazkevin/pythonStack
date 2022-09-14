@@ -7,18 +7,18 @@
     <title>Edit User</title>
 </head>
 <body>
-    <h1>Edit {{ one_user.id }}</h1>
     <span><a class="homeButton" href="/">HOME</a></span>
     <!-- this is the form -->
-    <form action="/create_user" method="post">
-        <label for="first_name">{{ one_user.first_name }}</label><br>
-        <input type="text" name="first_name"><br>
-        <label for="last_name">{{ one_user.last_name }}</label><br>
-        <input type="text" name="last_name"><br>
-        <label for="email" >{{ one_user.email }}</label><br>
-        <input type="text" name="email"><br>
-        <input type="submit" value="Create"><br>
-    </form> 
-    
+    <h1>Update info: user {{ one_user.id }}</h1>
+        <form action="/edit/{{one_user.id}}/update" method="post">
+            <label for="first_name">First Name:</label><br>
+            <input type="text" name="first_name" value={{one_user.first_name}}><br>
+            <label for="last_name">Last Name:</label><br>
+            <input value="{{ one_user.last_name }}" type="text" name="last_name"><br>
+            <label for="email" >Email:</label><br>
+            <input type="text" name="email" value="{{ one_user.last_name }}"><br>
+            <input type="submit" value="Update">
+        </form> 
+        <a href="/show/user/{{one_user.id}}" name="show_user" type="submit" value="Show_Users {{ one_user.id }}">Show User {{ one_user.id }}</a>
 </body>
 </html>
