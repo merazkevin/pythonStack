@@ -4,14 +4,14 @@ what does mvc stand for??
     
 MVC stands for:
     (M)
-    models 
+    models= MySQL
         are the intities(thing) that talks to the database
         models have all the class instances and methods. 
     (V)-
-    views 
+    views=html,css,js 
             templates, static files. 
     (C)-
-        controller= 
+        controller= all the routes
             all the routing gets handled by a controller.session, 
             getrting data coming from the forms 
 

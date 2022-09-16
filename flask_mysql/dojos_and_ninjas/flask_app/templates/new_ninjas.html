@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Ninjas</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_style.css') }}">
+
+</head>
+<body>
+    <div class="div">
+        <h2>New Ninja</h2>
+        <!-- this is the locationDropDownMenu -->
+        <form action="/create/ninja" method="POST">
+            <div class="locationDropDownMenu">
+                <label for="dojo">Dojo: 
+                    <select name="dojo_id" id="">
+                        {%for one_dojo in all_dojos%}
+                        <option value="{{one_dojo.id}}">{{one_dojo.dojo_name}}</option>
+                        {%endfor%}
+                    </select>
+                </label>
+            </div>
+                    <!-- this is the first name input -->
+                    <label for="first_name">first name:</label>
+                    <input type="text" name="first_name"><br>
+                    <!-- this is the first name input -->
+                    <label for="last_name">last name:</label>
+                    <input type="text" name="last_name"><br>
+                    <!-- this is the age input   -->
+                    <label for="age">age:</label>
+                    <input type="text" name="age"><br>
+                    <button class="buttons">create ninja</button>
+        </form>
+    <a href="/">HOME</a>
+    
+</body>
+</html>
