@@ -34,3 +34,12 @@ Joining Tables
     SELECT * FROM orders 
     JOIN items_orders ON orders.id = items_orders.order_id 
     JOIN items ON items.id = items_orders.item_id;
+
+    many to many  left join
+    "SELECT * FROM toppings 
+
+LEFT JOIN add_ons ON add_ons.topping_id = toppings.id 
+
+LEFT JOIN burgers ON add_ons.burger_id = burgers.id 
+
+WHERE toppings.id = %(id)s;"
