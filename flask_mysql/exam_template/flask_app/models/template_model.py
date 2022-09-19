@@ -2,20 +2,17 @@ from flask_app.config.mysqlconnection import connectToMySQL
 from flask_app import DATABASE, bcrypt
 from flask import flash,session
 
-
 import re
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 
-class User:
-    def __init__(self,data):
-        self.id = data['id']
-        self.first_name = data['first_name']
-        self.last_name = data['last_name']
-        self.email = data['email']
-        self.pw = data['pw']
-        self.created_at = data['created_at']
-        self.updated_at = data['updated_at']
 
+class Template:
+    def __init__(self,data):
+        self.id=data['id']
+        #all attributes of ur class based on your DB columns
+
+#<--------Staticmethods-------->
+# <--get all -->
     @classmethod
     def get_all(cls):
         query = "SELECT * FROM users;"
@@ -27,6 +24,7 @@ class User:
             all_users.append(users_instance)
         return all_users 
 
+#<--- Get one --->
     @classmethod
     def get_one(cls, data):
         query = "SELECT * FROM users WHERE users.id = %(id)s;"
@@ -36,6 +34,7 @@ class User:
             return cls(results[0])
         return False
 
+#<--- Get one by email --->
     @classmethod
     def get_one_by_email(cls, data):
         query = "SELECT * FROM users WHERE email = %(email)s;"
@@ -44,20 +43,22 @@ class User:
         if not results:
             return False
         return cls(results[0])
-        
-        
 
+#<--- insert/Create in Db --->
     @classmethod
     def create(cls, data):
         query = "INSERT INTO users (first_name, last_name, email, pw, pw_confirm) VALUES(%(first_name)s, %(last_name)s, %(email)s, %(pw)s, %(pw_confirm)s);"
         return connectToMySQL(DATABASE).query_db( query, data)
 
+#<---delete by id--->
     @classmethod
     def delete(cls, data):
-        query = "DELETE FROM users WHERE email= (%(email)s);"
+        query = "DELETE FROM users WHERE id=(%(id)s);"
         return connectToMySQL(DATABASE).query_db( query, data)
 
+#<--------Staticmethods-------->
 
+#<---Validate Registration--->
     @staticmethod
     def validate_registration(data:dict)->bool:
         is_valid = True
@@ -88,8 +89,7 @@ class User:
             flash('passwords do not match')
             is_valid=False
 
-        return is_valid
-
+#<---validate login--->
     @staticmethod
     def validate_login(data:dict)->bool:
         is_valid = True
@@ -109,11 +109,10 @@ class User:
                 'email':data['email'],
                 'pw':data['pw']
             }
-            potential_user = User.get_one_by_email({'email': data['email']})
+            potential_user = 888User.get_one_by_email({'email': data['email']})
             if not bcrypt.check_password_hash(potential_user.pw, data['pw']):
                 flash("incorrect password")
                 is_valid = False
             else:
                 session['uuid'] = potential_user.id
         return is_valid
-

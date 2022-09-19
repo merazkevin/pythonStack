@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>recipes</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_style.css') }}">
+    
+</head>
+<body>
+    <div>
+        {% with messages = get_flashed_messages() %}
+        <!-- declare a variable called messages -->
+        {% if messages %}
+        <!-- check if there are any messages -->
+        {% for message in messages %}
+        <!-- loop through the messages -->
+        <p>{{message}}</p> <!-- display each message in a paragraph tag -->
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </div>
+    <!-- this is the register form -->
+    <div class="div">
+        <form action="/register/user", method="POST">
+            <h2>Register</h2>
+            <!-- name -->
+            <label for="first_name">First Name</label><br>
+            <input type="text" name="first_name"><br>
+            <!-- lastname -->
+            <label for="last_name">Last Name</label><br>
+            <input type="text" name="last_name"><br>
+            <!-- email -->
+            <label for="first_name">Email</label><br>
+            <input type="text" name="email"><br>
+            <!-- password -->
+            <label for="password">password</label><br>
+            <input type="text" name="pw"><br>
+            <!-- confirm password -->
+            <label for="pw_confirm">confirm password</label><br>
+            <input type="text" name="pw_confirm"><br>
+            <!-- register button -->
+            <button class="button">Register</button>
+        </form>
+    </div>
+    <!-- this is the login form -->
+    <div class="div">
+        <form action="/user/process/login", method="POST">
+            <h2>Login</h2>
+            <label for="email">Email</label><br>
+            <input type="text" name="email"><br>
+            <label for="pw">Password</label><br>
+            <input type="text" name="pw"><br>
+            <button class="button">Login</button>
+        </form>
+    </div>
+</body>
+</html>
