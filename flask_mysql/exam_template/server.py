@@ -1,5 +1,6 @@
 from flask_app import app
-from flask_app.controllers import template_controller 
+from flask_app.controllers import user_controller
+from flask_app.controllers import car_controller
 
 
 

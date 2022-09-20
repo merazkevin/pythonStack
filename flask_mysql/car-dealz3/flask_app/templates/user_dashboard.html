@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dash Board</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_style.css') }}">
+
+</head>
+<body>
+    <div>
+        <form action="/car/sale/post">
+            <button>Add a Car</button>
+        </form>
+    </div>
+    <div class="div">
+        <h2>Welcome to Car Dealz 3, "USER"</h2>
+        <p>Cars for Sale</p>
+
+        <table>
+            <tr>
+                <th>Model</th>
+                <th>Year</th>
+                <th>Seller</th>
+                <th>Actions</th>
+            </tr>
+            {%for one_car in all_cars%}
+            <div class="dojos">
+                <span >
+                    <a href="/dojo/{{one_car.id}}">{{ one_dojo.dojo_name }}</a>
+                </span>
+            </div>
+            {%endfor%}
+        </table>
+    </div>
+    <div>
+        <form action="/logout">
+            <button>Logout</button>
+        </form>
+    </div>
+</body>
+</html>

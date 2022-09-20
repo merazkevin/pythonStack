@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_style.css') }}">
+</head>
+<body>
+    <h2>Welcome {{jinja}} </h2>
+    <p>All posted recipies:</p>
+
+    <div class="div">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Under</th>
+                <th>Posted</th>
+                <th>Actions</th>
+            </tr>
+            {%for one in 888 %}
+            <tr>
+                <td>{{for_one.name}}</td>
+                <td>{{for_one.under}}</td>
+                <td>{{for_one.posted_by}}</td>
+                <td>
+                    <span> <a href="">View </a> </span>|
+                    <span> <a href="">Edit</a> </span>|
+                    <span> <a href="">Delete</a> </span>
+                </td>
+            </tr>
+            {%endfor%}
+        </table>
+    </div>
+    
+</body>
+</html>

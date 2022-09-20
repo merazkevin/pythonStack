@@ -48,6 +48,7 @@ def user_process_login():
     else:
         session['uuid']= user_in_db.id
     return redirect('/user/dashboard')
+
 #<---5 Route--->
 @app.route('/logout')
 def logout():

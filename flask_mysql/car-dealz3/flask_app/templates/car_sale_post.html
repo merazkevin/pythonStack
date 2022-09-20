@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Sale Form</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_style.css') }}">
+
+</head>
+<body>
+    <div class="div">
+        <form action="/create/car/post">
+            <h2>Put Car Up For Sale</h2>
+            <label for="price">Price:</label><br>
+            <input type="number" min="1"><br>
+            <label for="model">Model:</label><br>
+            <input type="text" name="model"><br>
+            <label for="model">Year:</label><br>
+            <input type="number" name="year" min="1800"><br>
+            {%for one_user in cars_and_sellers %}
+                <div>
+                    <label for="model">{{one_user.id}}</label><br>
+                    <input type="text" min="1" name="year"><br>
+                </div>
+            {%endfor%}
+            <label for="description">Description</label><br>
+            <textarea name="description" placeholder="YOur comment here!" cols="30" rows="8">Description</textarea><br>
+            <button>Add</button>
+        </form>
+    </div>
+    <form action="/">
+        <button>Dashboard</button>
+    </form>  
+    <span>
+        <form action="/logout">
+            <button>Logout</button>
+        </form>
+    </span>
+</body>
+</html>
