@@ -1,7 +1,5 @@
 from flask_app import app
-from flask_app.controllers import user_controller
-app.secret_key = "root"
-
+from flask_app.controllers import user_controller, painting_controller
 
 
 if __name__=="__main__":

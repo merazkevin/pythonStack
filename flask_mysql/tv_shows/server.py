@@ -1,6 +1,6 @@
 from flask_app import app
-from flask_app.controllers import user_controller
-app.secret_key = "root"
+from flask_app.controllers import user_controller, show_controller
+
 
 
 

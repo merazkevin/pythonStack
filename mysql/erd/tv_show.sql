@@ -1,0 +1,1 @@
+SELECT * FROM shows LEFT JOIN users ON users.id=users_id WHERE shows.id = 2;

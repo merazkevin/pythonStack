@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit show</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_style.css') }}">
+
+</head>
+<body>
+    <div class="div">
+        <h2></h2>
+        <tr>
+        <p>Network: {{tv_show.network}}</p>
+        <p>releasd Date:{{tv_show.released_date}}</p>
+        <p>description:{{tv_show.description}}</p>
+        <p>Posted:{{tv_show.posted_by.first_name}}{{tv_show.posted_by.last_name}}</p>
+        </tr>
+    </div>
+</body>
+</html>

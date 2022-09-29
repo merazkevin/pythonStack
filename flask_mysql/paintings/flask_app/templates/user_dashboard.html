@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_style.css') }}">
+</head>
+<body>
+    <div class="div">
+        <h2>Hello {{user.first_name}}</h2>
+        {% for one_painting in paintings%}
+        <div>
+            <p><a href="/display/painting/{{one_painting.id}}">{{one_painting.title}}</a> </p>
+            {% if one_painting.users_id == user.id %}
+            <a href="edit/{{one_painting.id}}">Edit</a>
+            <a href="/delete/{{one_painting.id}}">Delete</a>
+            {% endif %}
+            
+        </div>
+        {%endfor%}
+    </div>
+    <form action="/logout">
+        <button class="button">Logout</button>
+        <p><a href="/add/painting">Add Painting</a></p>
+    </form>
+</body>
+</html>

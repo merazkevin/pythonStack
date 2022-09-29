@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_style.css') }}">
+
+</head>
+<body>
+    <div class="div">
+        <div>
+            <p>All Tv Shows:</p>
+            <h2>Howdy USER</h2>
+        </div>
+        <table>
+            <tr>
+                <th>Tittle</th>
+                <th>Network</th>
+                <th>Release Date</th>
+                <th>Actions</th>
+            </tr>
+            {%for tv in tv%}
+            <div class="dojos">
+                <span >
+                    {{tv.tittle}}
+                </span>
+            </div>
+            {%endfor%}
+        </table>
+    </div>
+    <!-- create link -->
+    <div>
+    <span><a href="/add/show">+create</a></span>
+    <span>      |     </span>
+    <span><a href="/logout">logout</a></span>
+    </div>
+</body>
+</html>
